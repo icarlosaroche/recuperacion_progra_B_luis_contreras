@@ -1,0 +1,13 @@
+Serie II
+
+Primero pensé en qué datos necesitaba de cada reserva, el nombre del cliente, número de habitación, fecha de ingreso, cuántas noches y el precio por noche. Con eso claro pensé en las operaciones que debía hacer el programa, registrar, listar, calcular el total de ingresos y encontrar la reserva más larga. Decidí separar el código en Hotel.Modelos para los datos y Hotel.App para el menú, así no mezclaba todo en un archivo.
+
+Para guardar las reservas usé una List<Reserva> porque no sé cuantas reservas se van a registrar entonces no puedo usar un arreglo de tamaño fijo, la lista me permite ir agregando según se necesite.
+
+Los campos de Reserva los dejé como private porque si los pongo public cualquier parte del programa podría modificarlos sin control. Para leerlos desde afuera creé métodos Get. Eso es lo que vimos de encapsulamiento en clase.
+
+Para el menú usé switch porque cada opción es un caso diferente y me parece más claro que varios if anidados. El while lo usé para que el programa siga corriendo hasta que el usuario elija salir.
+
+El método CalcularTotal lo puse dentro de Reserva y no en Hotel porque ese calculo solo depende de los datos de la misma reserva.
+
+La mayor parte del codigo la hice yo, el menú, los casos del switch, los métodos Get y leer los datos con Console.ReadLine. Donde me apoyé en GitHub Copilot fue en ObtenerMayorDuracion porque no tenía claro como comparar objetos dentro de una lista con una variable auxiliar, eso me costó entenderlo. También me ayudó con CalcularIngresoTotal y con el ToString porque no recordaba bien la sintaxis del override.

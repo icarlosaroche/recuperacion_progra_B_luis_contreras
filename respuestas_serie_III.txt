@@ -1,0 +1,9 @@
+Serie III
+
+1. El error que tiene es que en el método CalcularCosto dice precioPoNoche en vez de precioPorNoche, le falta la r, entonces no va a compilar. Aparte de eso el método es static pero usa el campo Noches que es de la instancia, eso tampoco funciona en un struct así.
+
+2. Si fuera clase en lugar de struct la diferencia principal es que las clases son por referencia y los structs por valor. Eso significa que si pasas un struct a un método y lo modificas adentro, el original no cambia porque se copió. Con clase sí cambiaría el original. Además con clase se podría usar herencia, con struct no se puede.
+
+3. No están bien los modificadores. Todos los campos son public lo que significa que cualquier parte del programa puede cambiar el nombre del cliente o el numero de noches directamente sin ningún control. Lo correcto seria ponerlos private y usar métodos o propiedades para acceder a ellos, así se aplica encapsulamiento.
+
+4. No esta muy bien estructurado para el futuro porque al ser struct no permite herencia, entonces si en algún momento se necesitara un tipo especial de reserva como ReservaVIP no se podría extender de esta. Convertirla a clase y aplicar bien el encapsulamiento la haría mucho más facil de mantener y ampliar despues.
